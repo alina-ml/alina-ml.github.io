@@ -1,1 +1,1 @@
-form send
+<? print_r ($_POST);?>
