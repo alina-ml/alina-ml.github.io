@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>fron-end test task</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="main__nav">
+		<button data-modal-trigger="#modal1" data-modal-tab="#tab1" class="btn btn__round btn__light">Sign in</button>
+		<button data-modal-trigger="#modal1" data-modal-tab="#tab2" class="btn btn__round btn__bold">Sign up</button>
+	</div>
+
+	<div class="modal" id="modal1" data-tabs>
+		<ul class="tabs__top">
+			<li class="tabs__topItem"><a href="#tab1" data-tab-control="#modal1" class="tab__title active">Sign in</a></li>
+			<li class="tabs__topItem"><a href="#tab2" data-tab-control="#modal1" class="tab__title">New account</a></li>
+		</ul>
+		<ul class="tabs__contentWrap">
+			<li class="tab__content active" id="tab1" data-tabs data-tab="#modal1">
+				<div id="subtab1" class="subtab active" data-tab="#tab1">
+					<form action="action.php" class="form" method="post" name="login">
+						<div class="field">
+							<input type="email" class="field__input" placeholder="E-mail" name="email" required>
+						</div>
+						<div class="field">
+							<input type="password" class="field__input" placeholder="Password" name="password" required>
+							<span class="field__btn text-small">Show</span>
+						</div>
+						<div class="field">
+							<label class="text-small">
+								<input type="checkbox" name="remember_user">
+								<span>Remember me</span>
+							</label>
+						</div>
+						<button type="button" data-submit class="btn btn__square btn__block btn__bold">Login</button>
+					</form>
+				</div>
+				<div id="subtab2" class="subtab" data-tab="#tab1">
+					<form action="action.php" class="form" method="post" name="reset_pass">
+						<p class="text-small form__text">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+						<div class="field">
+							<input type="email" class="field__input" placeholder="E-mail" name="email" required>
+						</div>
+						<button type="button" data-submit class="btn btn__square btn__block btn__bold">Reset password</button>
+					</form>
+				</div>
+				<div class="subtab_controlBlock text-small">
+					<a href="#subtab2" data-tab-control="#tab1" class="subtab_control">Forgot your password?</a>
+					<a href="#subtab1" data-tab-control="#tab1" data-tab-initial class="subtab_control active">Back to log-in</a>
+				</div>
+			</li>
+			<li class="tab__content" id="tab2" data-tab="#modal1">
+				<div class="subtab">
+					<form action="action.php" class="form" method="post" name="signup">
+						<div class="field">
+							<input type="text" class="field__input" placeholder="Username" name="username" required>
+						</div>
+						<div class="field">
+							<input type="email" class="field__input" placeholder="E-mail" name="email" required>
+						</div>
+						<div class="field">
+							<input type="password" class="field__input" placeholder="Password" name="password" required data-same-field="#repeat_password">
+							<span class="field__btn text-small">Show</span>
+						</div>
+						<div class="field hidden" id="repeat_password">
+							<input type="password" class="field__input" placeholder="Repeat password" name="repeat_password" required>
+							<span class="field__btn text-small">Show</span>
+						</div>
+						<div class="field">
+							<label class="text-small">
+								<input type="checkbox" name="terms_agree" required>
+								<span>I agree to the <a href="#" class="link">Terms</a></span>
+							</label>
+						</div>
+						<button type="button" data-submit class="btn btn__square btn__block btn__bold">Create account</button>
+					</form>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
