@@ -287,4 +287,6 @@ label {
 	}
 }
 
-.test_for_git{}
+.test_for_git {
+	color: inherit;
+}
