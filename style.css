@@ -290,4 +290,6 @@ label {
 .test_for_git{
 	color: inherit;
 }
-.another_test{}
+.another_test {
+	color: #000;
+}
